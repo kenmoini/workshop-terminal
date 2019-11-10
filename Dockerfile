@@ -2,7 +2,7 @@ FROM quay.io/openshifthomeroom/workshop-terminal:master
 
 USER root
 
-RUN mkdir -p /tmp/working && cd /tmp/working
+RUN mkdir -p /tmp/working && cd /tmp/working && mkdir /tmp/src
 
 WORKDIR /tmp/working
 
