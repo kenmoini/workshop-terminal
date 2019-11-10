@@ -10,7 +10,7 @@ COPY config/zshrc /tmp/working/zshrc
 
 RUN yum update -y && yum clean all
 
-RUN yum install wget ed curl nano vim gcc gcc-c++ gcc-gfortran gettext initscripts openssh openssh-server openssh-server-sysvinit libtool patch git make ncurses-devel python3-pip python3 python3-setuptools python3-devel unzip ansible zsh rsyslog -y && yum clean all
+RUN yum install wget ed curl nano vim gcc gcc-c++ gcc-gfortran gettext libtool patch git make ncurses-devel unzip zsh rsyslog -y && yum clean all
 
 RUN yum install -y epel-release && yum install nodejs npm -y && yum clean all
 
@@ -19,8 +19,6 @@ RUN cat "$(which zsh)" >> /etc/shells && \
     cd fonts && ./install.sh && cd .. && rm -rf fonts/ && \
     pip3 install thefuck && \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
-    wget -O oc.tar.gz "https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz" && \
-    tar zxvf oc.tar.gz && cd openshift-origin-client-* && mv kubectl /usr/local/bin && mv oc /usr/local/bin && \
     rm -rf /tmp/working
 
 RUN rm -rf /tmp/src/.git* && \
