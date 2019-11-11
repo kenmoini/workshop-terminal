@@ -4,7 +4,10 @@
     "metadata": {
         "name": "workshop-terminal-production",
         "annotations": {
-            "openshift.io/display-name": "Workshop Terminal (Production)"
+            "iconClass": "icon-slides-dot-com",
+            "description": "An in-browser interactive web terminal for Workshops running on OpenShift.",
+            "displayName": "Workshop Terminal",
+            "openshift.io/display-name": "Workshop Terminal"
         }
     },
     "parameters": [
