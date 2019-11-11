@@ -6,7 +6,7 @@ STATUS=0 && whoami &> /dev/null || STATUS=$? && true
 
 if [[ "$STATUS" != "0" ]]; then
     cat /etc/passwd | sed -e "s/^default:/builder:/" > /tmp/passwd
-    echo "default:x:$(id -u):$(id -g):,,,:/opt/app-root/src:/bin/bash" >> /tmp/passwd
+    echo "default:x:$(id -u):$(id -g):,,,:/opt/app-root/src:/bin/zsh" >> /tmp/passwd
     cat /tmp/passwd > /etc/passwd
     rm /tmp/passwd
 fi
