@@ -13,3 +13,16 @@ for i in /opt/app-root/etc/profile.d/*.sh /opt/app-root/etc/profile.d/sh.local; 
         . "$i" >/dev/null
     fi
 done
+
+
+case $- in
+  *i*)
+    # Interactive session. Try switching to bash.
+    if [ -z "$ZSH" ]; then # do nothing if running under bash already
+      zsh=$(command -v zsh)
+      if [ -x "$bash" ]; then
+        export SHELL="$zsh"
+        exec "$zsh" -l
+      fi
+    fi
+esac
