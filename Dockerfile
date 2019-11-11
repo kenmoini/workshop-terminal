@@ -10,6 +10,7 @@ COPY config/zshrc /tmp/working/zshrc
 
 COPY terminal/bin/. /opt/workshop/bin/
 COPY terminal/etc/. /opt/workshop/etc/
+COPY terminal/.bash_profile /opt/app-root/src/.bash_profile
 
 RUN yum update -y && yum clean all
 
