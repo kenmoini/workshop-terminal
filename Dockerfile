@@ -14,13 +14,13 @@ RUN yum install wget ed curl nano vim gcc gcc-c++ gcc-gfortran gettext libtool p
 
 RUN yum install -y epel-release && yum install nodejs npm -y && yum clean all
 
-RUN cat "$(which zsh)" >> /etc/shells && \
+RUN command -v zsh | tee -a /etc/shells && \
     git clone https://github.com/powerline/fonts.git --depth=1 && \
     cd fonts && ./install.sh && cd .. && rm -rf fonts/ && \
     pip3 install thefuck && \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
     cp /tmp/working/zshrc /opt/app-root/src/.zshrc && \
-    chsh -s /usr/bin/zsh default && chsh -s /usr/bin/zsh default && \
+    chsh -s $(command -v zsh) default && chsh -s $(command -v zsh) default && \
     rm -rf /tmp/working
 
 RUN rm -rf /tmp/src/.git* && \
