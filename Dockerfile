@@ -19,6 +19,8 @@ RUN cat "$(which zsh)" >> /etc/shells && \
     cd fonts && ./install.sh && cd .. && rm -rf fonts/ && \
     pip3 install thefuck && \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+    cp /tmp/working/zshrc /opt/app-root/src/.zshrc && \
+    chsh -s /usr/bin/zsh default && chsh -s /usr/bin/zsh default && \
     rm -rf /tmp/working
 
 RUN rm -rf /tmp/src/.git* && \
