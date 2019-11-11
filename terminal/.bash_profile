@@ -11,7 +11,7 @@ case $- in
     # Interactive session. Try switching to bash.
     if [ -z "$ZSH" ]; then # do nothing if running under bash already
       zsh=$(command -v zsh)
-      if [ -x "$bash" ]; then
+      if [ -x "$zsh" ]; then
         export SHELL="$zsh"
         exec "$zsh" -l
       fi

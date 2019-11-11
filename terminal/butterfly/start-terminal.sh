@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export SHELL=/bin/bash
+export SHELL=/bin/zsh
 
 if [ x"$JUPYTERHUB_USER" != x"" ]; then
     export PS1="[$JUPYTERHUB_USER:\w] $ "
@@ -12,4 +12,4 @@ if [ x"$TERMINAL_HOME" != x"" ]; then
     cd $TERMINAL_HOME
 fi
 
-exec /bin/bash "$@"
+exec /bin/zsh "$@"
