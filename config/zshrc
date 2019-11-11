@@ -3,5 +3,6 @@ export ZSH="/opt/app-root/src/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 DISABLE_AUTO_UPDATE="true"
+ZSH_DISABLE_COMPFIX="true"
 plugins=(git ansible kubectl sudo thefuck)
 source $ZSH/oh-my-zsh.sh
