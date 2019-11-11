@@ -8,6 +8,9 @@ WORKDIR /tmp/working
 
 COPY config/zshrc /tmp/working/zshrc
 
+COPY terminal/bin/. /opt/workshop/bin/
+COPY terminal/etc/. /opt/workshop/etc/
+
 RUN yum update -y && yum clean all
 
 RUN yum install wget ed curl nano vim gcc gcc-c++ gcc-gfortran gettext libtool patch git make ncurses-devel unzip zsh rsyslog -y && yum clean all
