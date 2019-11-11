@@ -13,7 +13,7 @@ case $- in
       zsh=$(command -v zsh)
       if [ -x "$bash" ]; then
         export SHELL="$zsh"
-        exec "$zsh"
+        exec "$zsh" -l
       fi
     fi
 esac
