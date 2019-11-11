@@ -20,7 +20,6 @@ RUN command -v zsh | tee -a /etc/shells && \
     pip3 install thefuck && \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
     cp /tmp/working/zshrc /opt/app-root/src/.zshrc && \
-    chsh -s $(command -v zsh) default && chsh -s $(command -v zsh) default && \
     rm -rf /tmp/working
 
 RUN rm -rf /tmp/src/.git* && \
