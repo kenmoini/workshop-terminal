@@ -1,6 +1,9 @@
 export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin:/usr/bin:/usr/local/bin:$PATH
 export ZSH="/opt/app-root/src/.oh-my-zsh"
 
+#lazy internal OCP LB h4x lol
+alias oc='oc --insecure-skip-tls-verify'
+
 ZSH_THEME="agnoster"
 DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
