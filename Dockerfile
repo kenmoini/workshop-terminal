@@ -1,4 +1,4 @@
-FROM quay.io/openshifthomeroom/workshop-terminal:master
+FROM quay.io/openshifthomeroom/workshop-terminal:latest
 
 USER root
 
